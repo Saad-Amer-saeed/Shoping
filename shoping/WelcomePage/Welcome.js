@@ -2,7 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View, Image, StatusBar } from "react-native";
 import AppButton from "../Component/UiComponent/App-Button";
 import Colors from "../Component/Constant/colors.android.ios";
-export default function WelcomePage() {
+export default function WelcomePage({ navigation }) {
+  function handelIntroPage() {
+    navigation.navigate("IntroPage");
+  }
+
   return (
     <View style={styles.container}>
       <Image source={require("./../image/Welcome.png")} style={styles.cover} />
@@ -19,6 +23,7 @@ export default function WelcomePage() {
           color={Colors.primary1100}
           borderRadius={50}
           textColor={Colors.primary_white}
+          onPress={handelIntroPage}
         />
       </View>
       <StatusBar barStyle="dark-content" backgroundColor="black" />

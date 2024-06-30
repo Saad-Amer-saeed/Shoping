@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary_4,
   },
   Image: {
-    width: 300,
-    height: 500,
+    width: 262,
+    height: 368,
     resizeMode: "contain",
   },
   dotsContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    marginTop: 10,
+    marginTop: 40,
   },
   dot: {
     width: 10,
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: Colors.primary_4,
     marginHorizontal: 5,
-    borderWidth: Colors.primary_white,
+    borderWidth: 1,
+    borderColor: Colors.primary_white,
   },
   activeDot: {
     backgroundColor: Colors.primary_white, // Change to your active dot color
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
   text2: {
     fontSize: 15,
     fontWeight: "bold",
+    marginBottom: 80,
   },
   AppButton: {
     marginTop: 30,

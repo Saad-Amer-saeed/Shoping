@@ -11,11 +11,16 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="WelcomePage"
+          component={WelcomePage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="IntroPage"
           component={IntrPage}
           options={{
-            // title: "احجز طبيبك",
             headerShown: false,
-            // headerShadowVisible: false,
           }}
         />
       </Stack.Navigator>
