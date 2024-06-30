@@ -16,7 +16,7 @@ const Colors = {
   primary_1: "#D59252",
   primary_2: "#797979",
   primary_3: "#d7d7d7",
-
+  primary_4: "#464447",
   primary_text_dark: "#000",
   primary_text_light: "#ffffff",
   primary_white: "#ffffff",
