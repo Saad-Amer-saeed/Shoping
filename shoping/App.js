@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomePage from "./WelcomePage/Welcome";
 import IntrPage from "./WelcomePage/IntroPage";
+import DrawerNavigator from "./ShopingPage/homepage/DrawerNavigator";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -11,7 +12,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="WelcomePage"
-          component={WelcomePage}
+          component={DrawerNavigator}
           options={{
             headerShown: false,
           }}
