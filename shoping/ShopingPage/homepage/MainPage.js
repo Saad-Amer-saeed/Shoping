@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image, Text } from "react-native";
 import Category from "./Category";
 
 const CategoryList = () => {
@@ -17,16 +17,26 @@ const CategoryList = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      {categories.map((category, index) => (
-        <Category
-          key={index}
-          name={category.name}
-          isPressed={pressedIndex === index}
-          onPress={() => handlePress(index)}
+    <>
+      <View style={styles.container}>
+        {categories.map((category, index) => (
+          <Category
+            key={index}
+            name={category.name}
+            isPressed={pressedIndex === index}
+            onPress={() => handlePress(index)}
+          />
+        ))}
+        <Image
+          source={require("./../../image/MainPage.png")}
+          style={styles.cover}
         />
-      ))}
-    </View>
+      </View>
+      <View style={styles.text}>
+        <Text style={styles.FeatureText}>Feature Products</Text>
+        <Text style={styles.showingText}>Show All</Text>
+      </View>
+    </>
   );
 };
 
@@ -37,6 +47,31 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "flex-start",
     backgroundColor: "#fff",
+  },
+  cover: {
+    flex: 1,
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+
+    resizeMode: "contain",
+    top: 0,
+    left: 0,
+    zIndex: -1,
+  },
+  FeatureText: {
+    fontSize: 25,
+  },
+  showingText: {
+    fontSize: 18,
+    color: "#9B9B9B",
+  },
+  text: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "baseline",
+    justifyContent: "space-between",
+    backgroundColor: "#ffff",
   },
 });
 
