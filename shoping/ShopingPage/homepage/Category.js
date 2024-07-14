@@ -1,32 +1,26 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-const Category = () => {
+const Category = ({ name, isPressed, onPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.test}>
-        <View style={styles.iconContainer}>
-          <View style={styles.outerCircle}>
-            <Ionicons name="woman-sharp" size={30} color="#ffff" />
-          </View>
-        </View>
-        {/* <View style={styles.iconContainer}>
-          <View style={styles.outerCircle}>
-            <Ionicons name="man" size={30} color="#ffff" />
-          </View>
-        </View>
-        <View style={styles.iconContainer}>
-          <View style={styles.outerCircle}>
-            <MaterialCommunityIcons name="glasses" size={30} color="#ffff" />
-          </View>
-        </View>
-        <View style={styles.iconContainer}>
-          <View style={styles.outerCircle}>
-            <Ionicons name="brush-outline" size={30} color="#ffff" />
-          </View>
-        </View> */}
+        <TouchableOpacity
+          style={[
+            styles.iconContainer,
+            isPressed && styles.iconContainerPressed,
+          ]}
+          onPress={onPress}
+        >
+          {isPressed ? (
+            <View style={styles.outerCircle}>
+              <Ionicons name={name} size={30} color="#ffff" />
+            </View>
+          ) : (
+            <Ionicons name={name} size={30} color="#9D9D9D" />
+          )}
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -35,24 +29,22 @@ const Category = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffff",
+    backgroundColor: "#fff",
   },
   test: {
     paddingTop: 25,
     paddingHorizontal: 20,
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
   iconContainer: {
     width: 55,
     height: 55,
     borderRadius: 40,
-    backgroundColor: "#3A2C27",
+    backgroundColor: "#F3F3F3",
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#000",
+  },
+  iconContainerPressed: {
+    backgroundColor: "#3A2C27",
   },
   outerCircle: {
     width: 65,
