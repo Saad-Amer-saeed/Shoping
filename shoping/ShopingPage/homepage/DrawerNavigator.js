@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ShopingHomePage from "./MainPage";
-
+import TabNavigator from "./TabNavigation";
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
@@ -12,18 +12,30 @@ const DrawerNavigator = () => {
       <Drawer.Navigator>
         <Drawer.Screen
           name="GemStore"
-          component={ShopingHomePage}
+          component={TabNavigator}
           options={({ navigation }) => ({
             title: "Gemstore",
             headerShadowVisible: false,
+            headerLeft: () => (
+              <View style={{ paddingHorizontal: 30 }}>
+                <TouchableOpacity
+                  onPress={() => navigation.toggleDrawer()}
+                  style={styles.headerButton}
+                >
+                  <Ionicons name="menu-outline" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            ),
             headerRight: () => (
-              <TouchableOpacity style={styles.headerButton}>
-                <Ionicons
-                  name="notifications-outline"
-                  size={24}
-                  color="black"
-                />
-              </TouchableOpacity>
+              <View style={{ paddingHorizontal: 30 }}>
+                <TouchableOpacity style={styles.headerButton}>
+                  <Ionicons
+                    name="notifications-outline"
+                    size={24}
+                    color="black"
+                  />
+                </TouchableOpacity>
+              </View>
             ),
           })}
         />
@@ -35,8 +47,8 @@ const DrawerNavigator = () => {
 const styles = StyleSheet.create({
   drawerContainer: {
     flex: 1,
-    paddingHorizontal: 30,
-    paddingVertical: 20,
+    // paddingHorizontal: 30,
+    paddingVertical: 10,
     backgroundColor: "#ffff",
   },
   container: {
