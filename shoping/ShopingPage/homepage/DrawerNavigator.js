@@ -16,13 +16,16 @@ const DrawerNavigator = () => {
           options={({ navigation }) => ({
             title: "Gemstore",
             headerShadowVisible: false,
+            headerTitleStyle: {
+              fontSize: 20, // Change the font size here
+            },
             headerLeft: () => (
               <View style={{ paddingHorizontal: 30 }}>
                 <TouchableOpacity
                   onPress={() => navigation.toggleDrawer()}
                   style={styles.headerButton}
                 >
-                  <Ionicons name="menu-outline" size={24} color="black" />
+                  <Ionicons name="menu-outline" size={30} color="black" />
                 </TouchableOpacity>
               </View>
             ),
@@ -31,7 +34,7 @@ const DrawerNavigator = () => {
                 <TouchableOpacity style={styles.headerButton}>
                   <Ionicons
                     name="notifications-outline"
-                    size={24}
+                    size={27}
                     color="black"
                   />
                 </TouchableOpacity>

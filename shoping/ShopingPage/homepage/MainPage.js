@@ -11,10 +11,10 @@ const CategoryList = () => {
   };
 
   const categories = [
-    { name: "woman-sharp" },
-    { name: "man" },
-    { name: "glasses" },
-    { name: "brush-outline" },
+    { name: "woman-sharp", label: "Women" },
+    { name: "man", label: "Men" },
+    { name: "glasses", label: "Accessories" },
+    { name: "brush-outline", label: "Bauty" },
   ];
 
   const features = [
@@ -45,6 +45,7 @@ const CategoryList = () => {
               name={category.name}
               isPressed={pressedIndex === index}
               onPress={() => handlePress(index)}
+              label={category.label}
             />
           ))}
         </View>
@@ -58,6 +59,7 @@ const CategoryList = () => {
         </View>
         <FeatureList features={features} />
       </View>
+      {/* <Image source={require("./../../image/ww.png")} style={styles.cover2} /> */}
     </ScrollView>
   );
 };
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
   outercontainer: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingHorizontal: 30,
+    paddingHorizontal: 10,
   },
   outercontainer2: {
     alignItems: "center",
@@ -82,9 +84,21 @@ const styles = StyleSheet.create({
   },
   cover: {
     width: 350,
-    height: 250,
+    height: 200,
     resizeMode: "contain",
-    marginTop: 15,
+    marginTop: 10,
+    marginBottom: 15,
+    // backgroundColor: "red",
+  },
+  cover2: {
+    flex: 1,
+    backgroundColor: "red",
+    width: 450,
+    height: 200,
+    resizeMode: "center",
+    marginTop: 20,
+    marginBottom: 15,
+    // backgroundColor: "red",
   },
   FeatureText: {
     fontSize: 20,
@@ -98,8 +112,7 @@ const styles = StyleSheet.create({
     alignItems: "baseline",
     justifyContent: "space-between",
     width: "100%",
-    paddingHorizontal: 0,
-    marginBottom: 15,
+    marginBottom: 30,
   },
 });
 
