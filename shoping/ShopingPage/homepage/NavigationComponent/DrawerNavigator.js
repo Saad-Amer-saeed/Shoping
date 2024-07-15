@@ -2,7 +2,6 @@ import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import ShopingHomePage from "./MainPage";
 import TabNavigator from "./TabNavigation";
 const Drawer = createDrawerNavigator();
 
@@ -17,7 +16,7 @@ const DrawerNavigator = () => {
             title: "Gemstore",
             headerShadowVisible: false,
             headerTitleStyle: {
-              fontSize: 20, // Change the font size here
+              fontSize: 20,
             },
             headerLeft: () => (
               <View style={{ paddingHorizontal: 30 }}>
@@ -50,7 +49,7 @@ const DrawerNavigator = () => {
 const styles = StyleSheet.create({
   drawerContainer: {
     flex: 1,
-    // paddingHorizontal: 30,
+
     paddingVertical: 10,
     backgroundColor: "#ffff",
   },

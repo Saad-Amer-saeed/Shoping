@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
-import Category from "./Category";
-import FeatureList from "./FeatureComponent";
-
+import Category from "./MainPageComponent/Category";
+import FeatureList from "./MainPageComponent/FeatureComponent";
+import FeatureText from "./MainPageComponent/FeatureText";
 const CategoryList = () => {
   const [pressedIndex, setPressedIndex] = useState(null);
 
@@ -19,26 +19,26 @@ const CategoryList = () => {
 
   const features = [
     {
-      image: require("./../../image/uu.png"),
+      image: require("./../../image/Feature1.png"),
       title: "Turtleneck Sweater",
       price: "$39.99",
     },
     {
-      image: require("./../../image/pppp.png"),
+      image: require("./../../image/Feature2.png"),
       title: "Turtleneck Sweater",
-      price: "$39.99",
+      price: "$76.99",
     },
     {
-      image: require("./../../image/oo.png"),
+      image: require("./../../image/Feature3.png"),
       title: "Turtleneck Sweater",
       price: "$39.99",
     },
   ];
 
   return (
-    <ScrollView style={styles.outercontainer}>
+    <ScrollView style={styles.outercontainer1}>
       <View style={styles.outercontainer2}>
-        <View style={styles.container}>
+        <View style={styles.MainContainer}>
           {categories.map((category, index) => (
             <Category
               key={index}
@@ -51,28 +51,24 @@ const CategoryList = () => {
         </View>
         <Image
           source={require("./../../image/MainPage.png")}
-          style={styles.cover}
+          style={styles.Image}
         />
-        <View style={styles.text}>
-          <Text style={styles.FeatureText}>Feature Products</Text>
-          <Text style={styles.showingText}>Show All</Text>
-        </View>
+        <FeatureText />
         <FeatureList features={features} />
       </View>
-      {/* <Image source={require("./../../image/ww.png")} style={styles.cover2} /> */}
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  MainContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#fff",
     padding: 10,
   },
-  outercontainer: {
+  outercontainer1: {
     flex: 1,
     backgroundColor: "#fff",
     paddingHorizontal: 10,
@@ -82,37 +78,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  cover: {
+  Image: {
     width: 350,
     height: 200,
     resizeMode: "contain",
     marginTop: 10,
     marginBottom: 15,
-    // backgroundColor: "red",
-  },
-  cover2: {
-    flex: 1,
-    backgroundColor: "red",
-    width: 450,
-    height: 200,
-    resizeMode: "center",
-    marginTop: 20,
-    marginBottom: 15,
-    // backgroundColor: "red",
-  },
-  FeatureText: {
-    fontSize: 20,
-  },
-  showingText: {
-    fontSize: 18,
-    color: "#9B9B9B",
-  },
-  text: {
-    flexDirection: "row",
-    alignItems: "baseline",
-    justifyContent: "space-between",
-    width: "100%",
-    marginBottom: 30,
   },
 });
 

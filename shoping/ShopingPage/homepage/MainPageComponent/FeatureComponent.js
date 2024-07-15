@@ -9,8 +9,8 @@ const FeatureList = ({ features }) => {
       style={styles.Feature}
     >
       {features.map((feature, index) => (
-        <View key={index} style={styles.test}>
-          <Image source={feature.image} style={styles.cover2} />
+        <View key={index} style={styles.MainContainer}>
+          <Image source={feature.image} style={styles.Image} />
           <View style={styles.text}>
             <Text style={styles.title}>{feature.title}</Text>
             <Text style={styles.price}>{feature.price}</Text>
@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
   Feature: {
     flexDirection: "row",
   },
-  test: {
+  MainContainer: {
     paddingLeft: 0,
     alignItems: "center",
     marginHorizontal: 6,
   },
-  cover2: {
+  Image: {
     width: 150,
     height: 220,
     resizeMode: "contain",

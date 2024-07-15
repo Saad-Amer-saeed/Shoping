@@ -2,27 +2,29 @@ import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, Animated } from "react-native";
 import DynamicIntroPage from "../Component/UiComponent/DynamicIntroPage";
 
-const IntrPage = () => {
+const IntrPage = ({ navigation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeInAnim] = useState(new Animated.Value(0));
-
+  function handelmainpage() {
+    navigation.navigate("DrawerNavigator");
+  }
   const pages = [
     {
       title: "Discover something new",
       subtitle: "Special new arrivals for you",
-      imageSource: require("./../image/IntroIImage1.png"),
+      imageSource: require("./../image/ee1.png"),
       activeDotIndex: 0,
     },
     {
       title: "Discover something else",
       subtitle: "More specials just for you",
-      imageSource: require("./../image/IntroIImage2.png"),
+      imageSource: require("./../image/ee7.png"),
       activeDotIndex: 1,
     },
     {
       title: "Discover another thing",
       subtitle: "Exciting new offers",
-      imageSource: require("./../image/IntroIImage3.png"),
+      imageSource: require("./../image/ee2.png"),
       activeDotIndex: 2,
     },
   ];
@@ -70,6 +72,7 @@ const IntrPage = () => {
           subtitle={pages[currentIndex].subtitle}
           imageSource={pages[currentIndex].imageSource}
           activeDotIndex={pages[currentIndex].activeDotIndex}
+          handelmainpage={handelmainpage}
         />
       </Animated.View>
     </View>

@@ -3,7 +3,13 @@ import { StyleSheet, Text, View, Image, StatusBar } from "react-native";
 import AppButton from "./App-Button";
 import Colors from "../Constant/colors.android.ios";
 
-const DynamicIntroPage = ({ title, subtitle, imageSource, activeDotIndex }) => {
+const DynamicIntroPage = ({
+  title,
+  subtitle,
+  imageSource,
+  activeDotIndex,
+  handelmainpage,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>
@@ -24,6 +30,7 @@ const DynamicIntroPage = ({ title, subtitle, imageSource, activeDotIndex }) => {
           color={Colors.primary1100}
           borderRadius={50}
           textColor={Colors.primary_white}
+          onPress={handelmainpage}
         />
       </View>
     </View>

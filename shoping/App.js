@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomePage from "./WelcomePage/Welcome";
 import IntrPage from "./WelcomePage/IntroPage";
-import DrawerNavigator from "./ShopingPage/homepage/DrawerNavigator";
+import DrawerNavigator from "./ShopingPage/homepage/NavigationComponent/DrawerNavigator";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="WelcomePage"
-          component={DrawerNavigator}
+          component={WelcomePage}
           options={{
             headerShown: false,
           }}
@@ -20,6 +20,13 @@ export default function App() {
         <Stack.Screen
           name="IntroPage"
           component={IntrPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="DrawerNavigator"
+          component={DrawerNavigator}
           options={{
             headerShown: false,
           }}

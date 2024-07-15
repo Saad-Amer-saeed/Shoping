@@ -1,9 +1,8 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { AntDesign } from "@expo/vector-icons";
-import ShopingHomePage from "./MainPage";
+import ShopingHomePage from "../MainPage";
 import { useTheme } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -11,8 +10,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 function TabNavigator() {
   const theme = useTheme();
-  theme.colors.secondaryContainer = "transparent"; // Fixed typo
-
+  theme.colors.secondaryContainer = "transparent";
   return (
     <Tab.Navigator
       initialRouteName="Home"
