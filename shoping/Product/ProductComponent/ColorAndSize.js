@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
 const ColorAndSize = () => {
   const colorCircles = ["#E7C0A7", "#050302", "#EE6969"];
-  const sizeCircles = ["S", "M", "L"];
+  const sizeCircles = ["L", "M", "S"];
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
 
