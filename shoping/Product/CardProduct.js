@@ -2,14 +2,19 @@ import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import TextAndReview from "./ProductComponent/TextAndReview ";
 import ColorAndSize from "./ProductComponent/ColorAndSize";
-
+import DescriptionComponent from "./ProductComponent/DescriptionComponent "; // Import the new component
+import ReviewComponent from "./ProductComponent/ReviewComponent";
 const CardProduct = () => {
+  const description = "Description"; // Set your dynamic description
+
   return (
     <View style={styles.container}>
       <Image source={require("./../image/r99.png")} style={styles.image} />
       <View style={styles.card}>
         <TextAndReview />
         <ColorAndSize />
+        <DescriptionComponent description={description} />
+        <ReviewComponent description={"Review"} />
       </View>
     </View>
   );
