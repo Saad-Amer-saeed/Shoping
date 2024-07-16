@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomePage from "./WelcomePage/Welcome";
 import IntrPage from "./WelcomePage/IntroPage";
 import DrawerNavigator from "./ShopingPage/homepage/NavigationComponent/DrawerNavigator";
+import CardProduct from "./Product/CardProduct";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="WelcomePage"
-          component={WelcomePage}
+          component={CardProduct}
           options={{
             headerShown: false,
           }}
