@@ -12,19 +12,19 @@ const IntrPage = ({ navigation }) => {
     {
       title: "Discover something new",
       subtitle: "Special new arrivals for you",
-      imageSource: require("./../image/ee1.png"),
+      imageSource: require("./../image/Entro1.png"),
       activeDotIndex: 0,
     },
     {
       title: "Discover something else",
       subtitle: "More specials just for you",
-      imageSource: require("./../image/ee7.png"),
+      imageSource: require("./../image/Entro2.png"),
       activeDotIndex: 1,
     },
     {
       title: "Discover another thing",
       subtitle: "Exciting new offers",
-      imageSource: require("./../image/ee2.png"),
+      imageSource: require("./../image/Entro3.png"),
       activeDotIndex: 2,
     },
   ];

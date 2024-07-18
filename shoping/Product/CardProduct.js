@@ -9,7 +9,10 @@ const CardProduct = () => {
   const description = "Description";
   return (
     <View style={styles.container}>
-      <Image source={require("./../image/r99.png")} style={styles.image} />
+      <Image
+        source={require("./../image/CardProduct.png")}
+        style={styles.image}
+      />
       <View style={styles.card}>
         <TextAndReview />
         <ColorAndSize />

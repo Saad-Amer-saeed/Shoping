@@ -6,7 +6,7 @@ const TextAndReview = () => {
   return (
     <View style={styles.textContainer}>
       <View style={styles.TextAndReview}>
-        <Text style={styles.producttype}>SportWear Set</Text>
+        <Text style={styles.producttype}>Shirt</Text>
         <View style={styles.ReviewStar}>
           <FontAwesome6 name="star" size={24} color="black" />
           <FontAwesome6 name="star" size={24} color="black" />
@@ -15,7 +15,7 @@ const TextAndReview = () => {
           <FontAwesome6 name="star" size={24} color="black" />
         </View>
       </View>
-      <Text style={styles.Price}>$ 80.00</Text>
+      <Text style={styles.Price}>$ 22.00</Text>
     </View>
   );
 };
